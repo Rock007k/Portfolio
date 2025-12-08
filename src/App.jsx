@@ -1,11 +1,23 @@
-import WelcomeBanner from "./components/WelcomeBanner";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Reach from './pages/Reach';
 
 function App() {
   return (
-    <div>
-      <WelcomeBanner />
-      hello
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/reach" element={<Reach />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 }
 

@@ -1,2 +1,31 @@
 @import "tailwindcss";
 
+@theme {
+  --color-glass: rgba(255, 255, 255, 0.1);
+  --color-glassBorder: rgba(255, 255, 255, 0.2);
+  --color-primary: #00d4ff;
+  --color-secondary: #ff00d4;
+  --color-dark: #0a0a0a;
+
+  --font-sans: Inter, sans-serif;
+
+  --animate-spin-slow: spin 20s linear infinite;
+}
+
+@layer base {
+  body {
+    @apply bg-dark text-white font-sans antialiased overflow-x-hidden;
+  }
+}
+
+.glass-panel {
+  @apply bg-glass backdrop-blur-md border border-glassBorder rounded-xl shadow-lg;
+}
+
+.neon-text {
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5), 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.neon-text-pink {
+  text-shadow: 0 0 10px rgba(255, 0, 212, 0.5), 0 0 20px rgba(255, 0, 212, 0.3);
+}
